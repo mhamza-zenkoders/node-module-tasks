@@ -97,14 +97,21 @@ console.log("Data:", readData());
 
 
 
-//How replace function works
-// const jsonString2 = JSON.stringify(
-//   myObj,
-//   (key, value) => {
-//     // Change all string values to uppercase
-//     return typeof value === "string" ? value.toUpperCase() : value;
-//   },
-//   2
-// );
-// console.log(jsonString);
-// console.log(jsonString2);
+// How replace function works
+myOBJ = {
+    name: "Hamza Younus",
+    age: 24,
+    profession: "Software Engineer",
+    skills: ["JavaScript", "Python", "React", "Node.js"],
+  }
+
+const jsonString = JSON.stringify(
+  myObj,
+  (key, value) => {
+    // Change all string values to uppercase
+    return typeof value === "string" ? value.toUpperCase() : value;
+  },
+  2
+);
+console.log(jsonString);
+

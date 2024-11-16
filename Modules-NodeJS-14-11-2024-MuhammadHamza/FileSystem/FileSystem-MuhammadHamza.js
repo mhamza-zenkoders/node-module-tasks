@@ -4,7 +4,7 @@ const fs = require("fs");
 
 console.log("\n\nAsynchronous File Operations\n")
 
-fs.readFileSync("input-file.txt", "utf8", (err, data)=>{
+fs.readFile("input-file.txt", "utf8", (err, data)=>{
 
     if(err){
         console.log("Error Reading Input File", err);
@@ -17,7 +17,7 @@ fs.readFileSync("input-file.txt", "utf8", (err, data)=>{
 
 const output = 'this is output'
 
-fs.writeFileSync("output.txt", output, (err)=> {
+fs.writeFile("output.txt", output, (err)=> {
     if(err){
         console.log("Error Writing Output File", err);
     }else{

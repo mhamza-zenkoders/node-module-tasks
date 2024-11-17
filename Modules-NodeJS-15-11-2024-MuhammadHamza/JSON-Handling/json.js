@@ -101,6 +101,7 @@ const newData = {
   skills: ["Excel", "PowerBi", "Tabluea"],
 };
 
+//Testing
 addData(newData);
 console.log("Data:", readData());
 
@@ -108,6 +109,9 @@ deleteDatabyName("Shahmir Ghouri");
 console.log("Data:", readData());
 
 deleteDatabyIndex(1);
+console.log("Data:", readData());
+
+editDataByName("Hamza Younus", { age: 25, profession: "Senior Software Engineer" });
 console.log("Data:", readData());
 
 // How replace function works

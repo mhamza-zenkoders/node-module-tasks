@@ -130,4 +130,5 @@ const jsonString = JSON.stringify(
   },
   2
 );
+
 console.log(jsonString);

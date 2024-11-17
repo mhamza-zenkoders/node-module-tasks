@@ -2,9 +2,6 @@
 let arr = [10, 20, 30, 40, 50];
 console.log("Original:", arr);
 
-
-
-
 // Array Converted to String
 let convertedToString = arr.toString();
 console.log("Converted to String:", convertedToString);

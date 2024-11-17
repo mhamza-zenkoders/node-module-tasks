@@ -32,6 +32,22 @@ function addData(newData) {
   console.log("\nData Added Successfully!");
 }
 
+//Edit Data By Name
+function editDataByName(name, updatedData) {
+  let data = readData();
+  const index = data.findIndex(
+    (o) => o.name.toLowerCase() === name.toLowerCase()
+  );
+
+  if (index !== -1) {
+    data[index] = { ...data[index], ...updatedData };
+    writeData(data);
+    console.log(`\nData for ${name} has been updated successfully!`);
+  } else {
+    console.log(`\nNo data found with the name ${name}`);
+  }
+}
+
 //Add JS Object By Name
 function deleteDatabyName(name) {
   let data = readData();
@@ -94,16 +110,13 @@ console.log("Data:", readData());
 deleteDatabyIndex(1);
 console.log("Data:", readData());
 
-
-
-
 // How replace function works
 myOBJ = {
-    name: "Hamza Younus",
-    age: 24,
-    profession: "Software Engineer",
-    skills: ["JavaScript", "Python", "React", "Node.js"],
-  }
+  name: "Hamza Younus",
+  age: 24,
+  profession: "Software Engineer",
+  skills: ["JavaScript", "Python", "React", "Node.js"],
+};
 
 const jsonString = JSON.stringify(
   myObj,
@@ -114,4 +127,3 @@ const jsonString = JSON.stringify(
   2
 );
 console.log(jsonString);
-

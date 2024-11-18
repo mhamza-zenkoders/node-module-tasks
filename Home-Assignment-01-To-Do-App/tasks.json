@@ -12,27 +12,31 @@
     "completed": true
   },
   {
-    "name": "asddasdasdasd",
+    "name": "Clean room",
     "completed": true
   },
   {
-    "name": "asdasd",
+    "name": "Walk the dog",
+    "completed": false
+  },
+  {
+    "name": "Reply to emails",
     "completed": true
   },
   {
-    "name": "asadasd",
-    "completed": true
+    "name": "Organize closet",
+    "completed": false
   },
   {
-    "name": "clean room",
-    "completed": true
+    "name": "Exercise",
+    "completed": false
   },
   {
-    "name": "123",
-    "completed": true
+    "name": "Prepare dinner",
+    "completed": false
   },
   {
-    "name": "12123",
+    "name": "Read Book",
     "completed": false
   }
 ]

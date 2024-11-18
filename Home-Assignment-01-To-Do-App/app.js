@@ -44,13 +44,12 @@ async function addTask(tasks) {
 
     tasks.push(newTask);
     saveTasks(tasks);
-    console.log('Task Added Successfully!');
-    console.log('');
+    console.log('Task Added Successfully!\n');
 }
 
 async function deleteTask(tasks) {
     if (tasks.length === 0) {
-        console.log('No tasks available to Delete.');
+        console.log('No Tasks Available to Delete!\n');
         return;
     }
 
@@ -64,13 +63,12 @@ async function deleteTask(tasks) {
 
     tasks.splice(taskIndex, 1);
     saveTasks(tasks);
-    console.log('Task Deleted Successfully!');
-    console.log('');
+    console.log('Task Deleted Successfully!\n');
 }
 
 async function completeTask(tasks) {
     if (tasks.length === 0) {
-        console.log('No tasks available to mark as complete.');
+        console.log('No Tasks Available To Mark As Complete.\n');
         return;
     }
 
@@ -83,11 +81,11 @@ async function completeTask(tasks) {
     });
 
     if (tasks[taskIndex].completed) {
-        console.log('This task is already completed!');
+        console.log('This Task is Already Completed!\n');
     } else {
         tasks[taskIndex].completed = true;
         saveTasks(tasks);
-        console.log('Task Marked as Complete!');
+        console.log('Task Marked as Complete!\n');
     }
 }
 
@@ -119,8 +117,8 @@ async function mainMenu() {
                 await deleteTask(tasks);
                 break;
             case 'exit':
-                console.log('Exiting...');
-                return; // Exit the program when user selects "Exit"
+                console.log('Goodbye!');
+                return;
             default:
                 console.log('Invalid Option Selected.');
         }

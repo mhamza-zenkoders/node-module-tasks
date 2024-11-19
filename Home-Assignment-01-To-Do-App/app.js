@@ -12,8 +12,13 @@ function readData() {
 }
 
 function saveTasks(tasks) {
-    const data = JSON.stringify(tasks, null, 2);
-    writeFileSync('tasks.json', data);
+    try {
+        const data = JSON.stringify(tasks, null, 2);
+        writeFileSync('tasks.json', data);
+    } catch (err) {
+        console.log('Error Writing File', err);
+        return [];
+    }
 }
 
 function viewTasks(tasks) {

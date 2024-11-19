@@ -58,7 +58,9 @@ async function deleteTask(tasks) {
         choices: tasks.map((task, index) => ({
             name: `${index + 1}. ${task.name} [${task.completed ? 'Completed' : 'Pending'}]`,
             value: index
-        }))
+        })),
+        pageSize: tasks.length,
+        loop: false
     });
 
     tasks.splice(taskIndex, 1);
@@ -77,7 +79,9 @@ async function completeTask(tasks) {
         choices: tasks.map((task, index) => ({
             name: `${index + 1}. ${task.name} [${task.completed ? 'Completed' : 'Pending'}]`,
             value: index
-        }))
+        })),
+        pageSize: tasks.length,
+        loop: false
     });
 
     if (tasks[taskIndex].completed) {
@@ -99,7 +103,7 @@ async function mainMenu() {
                 { name: 'Add a Task', value: 'add' },
                 { name: 'Mark Task as Complete', value: 'complete' },
                 { name: 'Delete Task', value: 'delete' },
-                { name: 'Exit', value: 'exit' }
+                { name: 'Exit', value: 'exit' },
             ]
         });
 

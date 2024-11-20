@@ -40,8 +40,10 @@ let unionSet = new Set([...setA, ...setB]);
 console.log("Union of Set A & B:", unionSet); 
 
 // Intersection of sets
-let intersectionSet = new Set([...setA].filter(x => setB.has(x)));
-console.log("Intersection of Set A & B:", intersectionSet); 
+// let intersectionSet = new Set([...setA].filter(x => setB.has(x)));
+// console.log("Intersection of Set A & B:", intersectionSet); 
+setA.intersection(setB)
+console.log(setA);
 
 // Difference of sets
 let differenceSet = new Set([...setA].filter(x => !setB.has(x)));

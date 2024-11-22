@@ -1,0 +1,16 @@
+[
+  {
+    "id": 1,
+    "name": "Wireless Mouse",
+    "price": 19.99,
+    "inStock": true,
+    "rating": 4.5
+  },
+  {
+    "id": 2,
+    "name": "Bluetooth Speaker",
+    "price": 29.99,
+    "inStock": false,
+    "rating": 4.8
+  }
+]

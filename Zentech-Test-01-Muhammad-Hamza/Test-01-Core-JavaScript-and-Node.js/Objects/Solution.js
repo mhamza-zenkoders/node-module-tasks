@@ -25,13 +25,18 @@ let obj2 = { a: 1, b: { c: [3, 4, 5], d: 4, e: 5 } };
 
 console.log(mergeNestedObjects(obj1, obj2));
 
+
+
+
+
+
+
+
 // Implement a function that finds all properties in an object whose values are functions and returns their names as an array.
 
 function getFunctionPropertyNames(obj) {
     return Object.keys(obj).filter(x => typeof obj[x] === 'function');
 }
-
-
 
 console.log(getFunctionPropertyNames({
     name: 'hamza',
@@ -61,24 +66,30 @@ console.log(removeFalsyProperties({ name: 'hamza', age: 0, occupation: null, sal
 
 
 
-// Create a function that calculates the deep difference between two objects. For example, given:
 
+
+// Create a function that calculates the deep difference between two objects. For example, given:
 // obj1 = { a: 1, b: { c: 2, d: 3 } };
 // obj2 = { a: 1, b: { c: 2, d: 4, e: 5 } };
 // The result should be { b: { d: [3, 4], e: [undefined, 5] } }.
 
-function deepDiff(obj1, obj2) {
-    let result = {};
-    for (let key in obj2) {
-        if (typeof obj2[key] === 'object' && obj2[key] !== null) {
-            if (typeof obj1[key] === 'object' && obj1[key] !== null) {
-                result[key] = deepDiff(obj1[key], obj2[key])
-            }
-            else {
-                result[key] = [obj1[key], obj2[key]];
+function deepDiff(obj1, obj2, result={}) {
+    let uniqueKeys = new Set([...Object.keys(obj1),...Object.keys(obj2)]);
+    uniqueKeys.forEach((key) => {
+        let val1 = obj1[key];
+        let val2 = obj2[key];
+
+        if(typeof(val1) == 'object' && !Array.isArray(val1) && typeof(val2) == 'object' && !Array.isArray(val2)){
+            result[key] = {};
+            deepDiff(val1, val2, result[key]);
+            if(Object.keys(result[key]).length == 0){
+                delete result[key];
             }
         }
-    }
+        else if(val1 !== val2){
+            result[key] = [val1, val2]
+        }
+    })
     return result;
 }
 
@@ -87,31 +98,14 @@ obj4 = { a: 1, b: { c: 2, d: 4, e: 5 } };
 console.log(deepDiff(obj3, obj4));
 
 
-// Write a function that converts a flat object to a nested one based on its keys. For example,
 
+
+
+
+
+// Write a function that converts a flat object to a nested one based on its keys. For example,
 // { 'a.b.c': 1, 'a.b.d': 2, 'e': 3 }
 // should be converted to:
-
 // { a: { b: { c: 1, d: 2 } }, e: 3 }
-
-
-
-
-
-
-
-
-
-// function deepDiff(obj1, obj2) {
-//     const result = {};
-//     for (const key in obj2) {
-//         if (typeof obj2[key] === 'object' && obj2[key] !== null)
-//             if (typeof obj1[key] === 'object' && obj1[key] !== null)
-//                 result[key] = deepDiff(obj1[key], obj2[key]);
-//             else
-//             result[key] = [obj1[key], obj2[key]];
-//         }
-//         return result;
-//         }
 
 
